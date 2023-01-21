@@ -1,0 +1,42 @@
+[
+  {
+    "avatar": "https://cdn.vuetifyjs.com/images/lists/1.jpg",
+    "title": "Brunch this weekend?",
+    "subtitle": "Ali Connors — I'll be in your neighborhood doing errands this weekend. Do you want to hang out?",
+    "country": "russia",
+    "score": 9,
+    "residentialAddress": "3255 Collins Avenue"
+  },
+  {
+    "avatar": "https://cdn.vuetifyjs.com/images/lists/2.jpg",
+    "title": "Summer BBQ",
+    "subtitle": "to Alex, Scott, Jennifer — Wish I could come, but I'm out of town this weekend.",
+    "country": "russia",
+    "score": 40,
+    "residentialAddress": "3855 Hide A Way Road"
+  },
+  {
+    "avatar": "https://cdn.vuetifyjs.com/images/lists/3.jpg",
+    "title": "Oui oui",
+    "subtitle": "Sandra Adams — Do you have Paris recommendations? Have you ever been?",
+    "country": "russia",
+    "score": 28,
+    "residentialAddress": "1691 Wilkinson Street"
+  },
+  {
+    "avatar": "https://cdn.vuetifyjs.com/images/lists/4.jpg",
+    "title": "Birthday gift",
+    "subtitle": "Trevor Hansen — Have any ideas about what we should get Heidi for her birthday?",
+    "country": "usa",
+    "score": 13,
+    "residentialAddress": "2161 Barnes Avenue"
+  },
+  {
+    "avatar": "https://cdn.vuetifyjs.com/images/lists/5.jpg",
+    "title": "Recipe to try",
+    "subtitle": "Britta Holt — We should eat this: Grate, Squash, Corn, and tomatillo Tacos.",
+    "country": "usa",
+    "score": 5,
+    "residentialAddress": "1496 Goldcliff Circle"
+  }
+]

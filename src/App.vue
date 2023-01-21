@@ -1,7 +1,7 @@
 <template>
   <v-app>
     <v-main>
-      <ContentBlock/>
+      <ContentBlock />
     </v-main>
 
     <v-footer app v-bind="localAttrs">
@@ -13,17 +13,19 @@
 <script>
 import ContentBlock from './components/ContentBlock';
 import Footer from './components/Footer';
+import jsonList from './assets/defaultList.json'
+import { mapState, mapMutations } from 'vuex';
 
 export default {
   name: 'App',
 
   components: {
     ContentBlock,
-    Footer
+    Footer,
   },
 
   computed: {
-    localAttrs () {
+    localAttrs() {
       const attrs = {}
 
       attrs.absolute = true
@@ -31,6 +33,19 @@ export default {
 
       return attrs
     },
+    ...mapState([
+      'users'
+    ]),
+  },
+  methods: {
+    ...mapMutations([
+      'SET_DEFAULT_LIST',
+      'SET_LAST_ITEM_INDEX'
+    ])
+  },
+  created() {
+    this.SET_DEFAULT_LIST(jsonList)
+    this.SET_LAST_ITEM_INDEX(jsonList.length)
   },
 
   data: () => ({
