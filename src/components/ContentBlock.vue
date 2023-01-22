@@ -39,7 +39,8 @@ export default {
       'SET_API',
       'SET_COUNTRY_FILTER',
       'SET_SCORE_FILTER',
-      'SET_FILTER_STATUS'
+      'SET_FILTER_STATUS',
+      'SET_LIST'
     ]),
     fetchList(apiUrl) {
       this.SET_API(apiUrl)
