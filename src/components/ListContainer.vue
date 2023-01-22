@@ -29,9 +29,11 @@ import ListItem from './ListItem.vue'
 
 export default {
   name: 'ListContainer',
+
   components: {
     ListItem,
   },
+
   computed: {
     ...mapState([
       'users',
@@ -48,20 +50,24 @@ export default {
       return this.users.length
     }
   },
+
   methods: {
     ...mapMutations([
       'SET_LAST_ITEM_INDEX',
       'SET_POPUP_STATUS'
     ])
   },
+
   watch: {
     filteredUsersLength() {
       this.SET_LAST_ITEM_INDEX(this.filteredUsersLength)
     }
   },
+
   data: () => ({
     isLoaded: false
   }),
+
   mounted() {
     document.onreadystatechange = () => {
       if (document.readyState === "complete") {

@@ -18,16 +18,19 @@ import { mapActions, mapMutations, mapGetters } from 'vuex'
 
 export default {
   name: 'ContentBlock',
+
   components: {
     LogoContainer,
     FormContainer,
     ListContainer,
   },
+
   computed: {
     ...mapGetters([
       'filteredUsers'
     ])
   },
+
   methods: {
     ...mapActions([
       'FETCH_LIST'
@@ -56,8 +59,6 @@ export default {
     changeScoreFilter() {
       this.SET_FILTER_STATUS()
     }
-  },
-
-  data: () => ({}),
+  }
 }
 </script>

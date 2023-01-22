@@ -7,14 +7,12 @@
             <v-img :src="item.avatar" class="profile-picture"></v-img>
           </v-list-item-avatar>
         </template>
-
         <v-list>
           <v-list-item>
             <v-list-item-title>{{ item.residentialAddress }}</v-list-item-title>
           </v-list-item>
         </v-list>
       </v-menu>
-
       <v-list-item-content>
         <v-list-item-title>{{ item.title }}</v-list-item-title>
         <v-list-item-subtitle class="text--primary">{{ item.subtitle }}</v-list-item-subtitle>
@@ -29,20 +27,24 @@ import { mapState, mapMutations } from 'vuex';
 
 export default {
   name: 'ListItem',
+
   props: {
     item: {},
     index: {}
   },
+
   computed: {
     ...mapState([
       'lastItemIndex'
     ]),
   },
+
   methods: {
     ...mapMutations([
       'SET_POPUP_STATUS'
     ]),
   },
+
   data: () => ({
     showMenu: false
   })
