@@ -22,7 +22,6 @@ export default new Vuex.Store({
       score: 0,
       residentialAddress: ""
     }],
-    filteredUsers: [],
     filterActive: false,
     api: '',
     countryFilter: '',
@@ -31,19 +30,23 @@ export default new Vuex.Store({
   },
 
   getters: {
-    LastItemIndex(state) {
-      return state.lastItemIndex
-    },
+    filteredUsers(state) {
+      let filteredUsers = [...state.users]
+      if (state.countryFilter) filteredUsers = filteredUsers.filter(user => user.country === state.countryFilter)
+      if (state.scoreRangeFilter === '> 20') {
+        filteredUsers = filteredUsers.filter(user => user.score > 20)
+      }
+      else if (state.scoreRangeFilter === '< 10') filteredUsers = filteredUsers.filter(user => user.score < 10)
+      return filteredUsers
+    }
   },
 
   mutations: {
     SET_LIST: (state, apiList) => {
       state.users = apiList
-      state.filteredUsers = [...state.users]
     },
     SET_DEFAULT_LIST: (state, jsonList) => {
       state.users = jsonList
-      state.filteredUsers = [...state.users]
     },
     SET_LAST_ITEM_INDEX: (state, index) => {
       state.lastItemIndex = index - 1
@@ -62,14 +65,6 @@ export default new Vuex.Store({
         state.filterActive = true
       }
       else state.filterActive = false
-    },
-    SET_FILTERED_USERS: (state) => {
-      state.filteredUsers = [...state.users]
-      if (state.countryFilter) state.filteredUsers = state.filteredUsers.filter(user => user.country === state.countryFilter)
-      if (state.scoreRangeFilter === '> 20') {
-        state.filteredUsers = state.filteredUsers.filter(user => user.score > 20)
-      }
-      else if (state.scoreRangeFilter === '< 10') state.filteredUsers = state.filteredUsers.filter(user => user.score < 10)
     }
   },
 

@@ -14,7 +14,7 @@ import FormContainer from './FormContainer.vue'
 import ListContainer from './ListContainer.vue'
 import LogoContainer from './LogoComponent.vue'
 import jsonList from '../assets/defaultList.json'
-import { mapActions, mapMutations } from 'vuex'
+import { mapActions, mapMutations, mapGetters } from 'vuex'
 
 export default {
   name: 'ContentBlock',
@@ -23,7 +23,11 @@ export default {
     FormContainer,
     ListContainer,
   },
-
+  computed: {
+    ...mapGetters([
+      'filteredUsers'
+    ])
+  },
   methods: {
     ...mapActions([
       'FETCH_LIST'
@@ -33,25 +37,24 @@ export default {
       'SET_DEFAULT_LIST',
       'SET_COUNTRY_FILTER',
       'SET_SCORE_FILTER',
-      'SET_FILTERED_USERS',
       'SET_FILTER_STATUS'
     ]),
     fetchList(apiUrl) {
       this.SET_API(apiUrl)
+      this.SET_COUNTRY_FILTER()
+      this.SET_SCORE_FILTER()
       this.FETCH_LIST()
     },
     resetList() {
       this.SET_DEFAULT_LIST(jsonList)
+      this.SET_COUNTRY_FILTER()
+      this.SET_SCORE_FILTER()
     },
-    changeCountryFilter(country) {
-      this.SET_COUNTRY_FILTER(country)
+    changeCountryFilter() {
       this.SET_FILTER_STATUS()
-      this.SET_FILTERED_USERS()
     },
-    changeScoreFilter(score) {
-      this.SET_SCORE_FILTER(score)
+    changeScoreFilter() {
       this.SET_FILTER_STATUS()
-      this.SET_FILTERED_USERS()
     }
   },
 

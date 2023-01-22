@@ -1,7 +1,6 @@
 <template>
   <div>
     <v-list-item>
-
       <v-menu v-model="showMenu" absolute offset-y>
         <template v-slot:activator="{ on, attrs }">
           <v-list-item-avatar v-bind="attrs" v-on="on">
@@ -21,12 +20,12 @@
         <v-list-item-subtitle class="text--primary">{{ item.subtitle }}</v-list-item-subtitle>
       </v-list-item-content>
     </v-list-item>
-    <v-divider v-if="index < LastItemIndex" inset></v-divider>
+    <v-divider v-if="index < lastItemIndex" inset></v-divider>
   </div>
 </template>
 
 <script>
-import { mapGetters, mapMutations } from 'vuex';
+import { mapState, mapMutations } from 'vuex';
 
 export default {
   name: 'ListItem',
@@ -35,18 +34,18 @@ export default {
     index: {}
   },
   computed: {
-    ...mapGetters([
-      'LastItemIndex'
+    ...mapState([
+      'lastItemIndex'
     ]),
   },
   methods: {
     ...mapMutations([
       'SET_POPUP_STATUS'
-    ])
+    ]),
   },
   data: () => ({
-    showMenu: false,
-  }),
+    showMenu: false
+  })
 }
 </script>
 
