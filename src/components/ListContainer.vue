@@ -7,15 +7,13 @@
           <v-list-item-title class="ml-5">Nothing found, try changing the filters</v-list-item-title>
         </v-list-item-content>
         <transition-group name="list-transition">
-          <ListItem v-for="(item, index) in filteredUsers" :key="item.title" :item="item" :index="index"
-            @avatar-pressed="showPopup" />
+          <ListItem v-for="(item, index) in filteredUsers" :key="item.title" :item="item" :index="index" />
         </transition-group>
       </v-list>
       <v-list three-line v-else-if="isLoaded">
         <v-subheader>List</v-subheader>
         <transition-group name="list-transition">
-          <ListItem v-for="(item, index) in users" :key="item.title" :item="item" :index="index"
-            @avatar-pressed="showPopup" />
+          <ListItem v-for="(item, index) in users" :key="item.title" :item="item" :index="index" />
         </transition-group>
       </v-list>
       <v-progress-linear v-else-if="isLoaded == false" indeterminate color="primary"></v-progress-linear>
@@ -53,8 +51,7 @@ export default {
 
   methods: {
     ...mapMutations([
-      'SET_LAST_ITEM_INDEX',
-      'SET_POPUP_STATUS'
+      'SET_LAST_ITEM_INDEX'
     ])
   },
 

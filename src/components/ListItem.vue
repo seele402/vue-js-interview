@@ -23,7 +23,7 @@
 </template>
 
 <script>
-import { mapState, mapMutations } from 'vuex';
+import { mapState } from 'vuex';
 
 export default {
   name: 'ListItem',
@@ -36,12 +36,6 @@ export default {
   computed: {
     ...mapState([
       'lastItemIndex'
-    ]),
-  },
-
-  methods: {
-    ...mapMutations([
-      'SET_POPUP_STATUS'
     ]),
   },
 
