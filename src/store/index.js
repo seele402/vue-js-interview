@@ -42,11 +42,8 @@ export default new Vuex.Store({
   },
 
   mutations: {
-    SET_LIST: (state, apiList) => {
-      state.users = apiList
-    },
-    SET_DEFAULT_LIST: (state, jsonList) => {
-      state.users = jsonList
+    SET_LIST: (state, newList) => {
+      state.users = newList
     },
     SET_LAST_ITEM_INDEX: (state, index) => {
       state.lastItemIndex = index - 1

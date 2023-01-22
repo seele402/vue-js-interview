@@ -3,7 +3,6 @@
     <v-main>
       <ContentBlock />
     </v-main>
-
     <v-footer app v-bind="localAttrs">
       <Footer />
     </v-footer>
@@ -37,19 +36,17 @@ export default {
       'users'
     ]),
   },
+
   methods: {
     ...mapMutations([
-      'SET_DEFAULT_LIST',
+      'SET_LIST',
       'SET_LAST_ITEM_INDEX'
     ])
   },
+
   created() {
-    this.SET_DEFAULT_LIST(jsonList)
+    this.SET_LIST(jsonList)
     this.SET_LAST_ITEM_INDEX(jsonList.length)
   },
-
-  data: () => ({
-    //
-  }),
 };
 </script>
