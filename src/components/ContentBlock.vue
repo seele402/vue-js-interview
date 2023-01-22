@@ -37,7 +37,6 @@ export default {
     ]),
     ...mapMutations([
       'SET_API',
-      'SET_DEFAULT_LIST',
       'SET_COUNTRY_FILTER',
       'SET_SCORE_FILTER',
       'SET_FILTER_STATUS'
@@ -49,7 +48,7 @@ export default {
       this.FETCH_LIST()
     },
     resetList() {
-      this.SET_DEFAULT_LIST(jsonList)
+      this.SET_LIST(jsonList)
       this.SET_COUNTRY_FILTER()
       this.SET_SCORE_FILTER()
     },
