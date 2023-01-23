@@ -4,14 +4,14 @@
       <ContentBlock />
     </v-main>
     <v-footer app v-bind="localAttrs">
-      <Footer />
+      <VuetifyFooter />
     </v-footer>
   </v-app>
 </template>
 
 <script>
 import ContentBlock from './components/ContentBlock';
-import Footer from './components/Footer';
+import VuetifyFooter from './components/VuetifyFooter';
 import jsonList from './assets/defaultList.json'
 import { mapState, mapMutations } from 'vuex';
 
@@ -20,7 +20,7 @@ export default {
 
   components: {
     ContentBlock,
-    Footer,
+    VuetifyFooter,
   },
 
   computed: {

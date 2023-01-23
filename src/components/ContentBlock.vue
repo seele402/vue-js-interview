@@ -1,18 +1,18 @@
 <template>
   <v-container>
     <v-row align="center" justify="center" class="ma-4">
-      <LogoContainer />
+      <VuetifyLogo />
       <FormContainer @api-url-changed="fetchList" @reset-btn-pressed="resetList"
         @country-filter-changed="changeCountryFilter" @score-filter-changed="changeScoreFilter" />
-      <ListContainer />
+      <PostsList />
     </v-row>
   </v-container>
 </template>
 
 <script>
 import FormContainer from './FormContainer.vue'
-import ListContainer from './ListContainer.vue'
-import LogoContainer from './LogoComponent.vue'
+import PostsList from './PostsList.vue'
+import VuetifyLogo from './VuetifyLogo.vue'
 import jsonList from '../assets/defaultList.json'
 import { mapActions, mapMutations, mapGetters } from 'vuex'
 
@@ -20,9 +20,9 @@ export default {
   name: 'ContentBlock',
 
   components: {
-    LogoContainer,
+    VuetifyLogo,
     FormContainer,
-    ListContainer,
+    PostsList,
   },
 
   computed: {
